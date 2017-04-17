@@ -1,6 +1,0 @@
-C:\Users\Влад\Documents\Visual Studio 2015\self-study\С#\PapaMama\PapaMama\bin\Debug\PapaMama.exe.config
-C:\Users\Влад\Documents\Visual Studio 2015\self-study\С#\PapaMama\PapaMama\bin\Debug\PapaMama.exe
-C:\Users\Влад\Documents\Visual Studio 2015\self-study\С#\PapaMama\PapaMama\bin\Debug\PapaMama.pdb
-C:\Users\Влад\Documents\Visual Studio 2015\self-study\С#\PapaMama\PapaMama\obj\Debug\PapaMama.csprojResolveAssemblyReference.cache
-C:\Users\Влад\Documents\Visual Studio 2015\self-study\С#\PapaMama\PapaMama\obj\Debug\PapaMama.exe
-C:\Users\Влад\Documents\Visual Studio 2015\self-study\С#\PapaMama\PapaMama\obj\Debug\PapaMama.pdb
