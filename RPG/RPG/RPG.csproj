@@ -43,11 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Antidote.cs" />
+    <Compile Include="Cure.cs" />
     <Compile Include="DeathRattleEventArgs.cs" />
-    <Compile Include="HP_Change.cs" />
+    <Compile Include="IMagic.cs" />
+    <Compile Include="Immunity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestoreHP.cs" />
+    <Compile Include="Revival.cs" />
     <Compile Include="RPG_Character.cs" />
+    <Compile Include="Spell.cs" />
+    <Compile Include="Unfreeze.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
