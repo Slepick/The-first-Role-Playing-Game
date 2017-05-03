@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+enum condition { Normal, Weakened, Sick, Poisoned, Paralyzed, Dead };       //состояние
+enum race { Human, Dwarf, Elf, Ork, Goblin };                               //раса
 namespace RPG
 {
     [Serializable]
@@ -14,15 +15,26 @@ namespace RPG
         private static uint nextID = 1;
         private uint ID { get; set; } 
         private string name { get; set; }                                           //имя       
-        enum condition { Normal, Weakened, Sick, Poisoned, Paralyzed, Dead };       //состояние
         public condition cond { get; set; }
         public bool talkative { get; set; }                                         //возможность разговаривать
         public bool walkable { get; set; }                                          //возможность двигаться
-        enum race { Human, Dwarf, Elf, Ork, Goblin };                               //раса
         private race race_type { get; set; }
         private bool sex { get; set; }                                              //пол(женский false, мужской true)(а может enum?)
         public uint age { get; set; }                                               //возраст
-        public uint currrentHP { get; set; }                                        //текущее здоровье
+        public uint currrentHP                                                      //текущее здоровье
+        {
+            get;
+            set
+            {
+                double percent = (double)value / maxHP;
+                if (percent >= 0.1 && cond == condition.Weakened)
+                    cond = condition.Normal;
+                if (percent < 0.1 && percent > 0 && cond == condition.Normal)
+                    cond = condition.Weakened;
+                if (percent == 0 && cond != condition.Dead)
+                    cond = condition.Dead;
+            }
+        }                                        
         public uint maxHP { get; set; }                                             //макс здоровье
         public uint Expirience { get; set; }                                        // опыт
 
@@ -59,23 +71,11 @@ namespace RPG
             return 0;
         }
 
-        /// <summary>
-        /// надеюсь про здоровье это событие и его реализация в DeathRattle(данные для события) и HP_Change(класс-событие)
-        /// обработчик события
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="ev"></param>
-
-        private static void status_check(object sender, DeathRattleEventArgs ev)
-        {
-            //вроде тут ничего
-        }
 
         //ToString
         public override string ToString()
         {
-            return base.ToString() + ":\n " 
-                + "\n Идентификатор персонажа: " + ID.ToString()
+            return "Идентификатор персонажа: " + ID.ToString()
                 + "\n Имя персонажа: " + name.ToString()
                 + "\n Состояние персонажа: " + cond.ToString()
                 + "\n Возможность персонажа разговаривать: " + talkative.ToString()
