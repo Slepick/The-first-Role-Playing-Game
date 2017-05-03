@@ -43,8 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeathRattleEventArgs.cs" />
-    <Compile Include="HP_Change.cs" />
+    <Compile Include="CharacterWieldingMagic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RPG_Character.cs" />
