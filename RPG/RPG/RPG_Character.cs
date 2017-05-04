@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace RPG
+
 {
+
+    delegate void HitHandler(RPG_Character sender, uint damageValue);
+
     [Serializable]
     class RPG_Character : IComparable
     {
 
-        event EventHandler<DeathRattleEventArgs> hpChange; //Создал событие!!!
-
+        public event HitHandler Hit;
         /// <summary>
         /// поля
         /// </summary>
@@ -34,8 +38,12 @@ namespace RPG
             }
             set
             {
-                currentHP = value;
-                hpChange(this, new DeathRattleEventArgs(maxHP, currentHP));//когда оно происходит!!!
+                if (currentHP > value)
+                    Hit(this, currentHP - value);
+                else
+                    currentHP = value;
+                if (cond == condition.Normal || cond == condition.Weakened)
+                    ChangeStatusToNormal();
             }
         }
         public uint maxHP { get; set; }                                             //макс здоровье
@@ -56,7 +64,6 @@ namespace RPG
             sex = Sex;
             ID = nextID;
             nextID++;
-            this.hpChange += this.status_check;//подписался!!!на всякий случай в начале this написал,может не надо
         }
 
         /// <summary>
@@ -82,17 +89,18 @@ namespace RPG
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="ev"></param>        
-        private void status_check(object sender, DeathRattleEventArgs ev)//твой Обработчик события
+        public void ChangeStatusToNormal()
         {
-            if ((ev.Heath >= 10) && (cond == condition.Weakened))
+            double percent = 1.0 * currentHP / maxHP;
+            if ((percent >= 0.1) && (cond != condition.Normal))
             {
                 cond = condition.Normal;
             }
-            if ((ev.Heath > 0) && (ev.Heath < 10) && (cond == condition.Normal))
+            if ((percent > 0) && (percent < 10) && (cond != condition.Weakened))
             {
                 cond = condition.Weakened;
             }
-            if ((ev.Heath == 0) && (cond != condition.Dead))
+            if (percent == 0)
             {
                 cond = condition.Dead;
             }
@@ -115,7 +123,11 @@ namespace RPG
                 + "\n Максимальное здоровье персонажа: " + maxHP.ToString()
                 + "\n Опыт персонажа: " + Expirience.ToString();
         }
-
+        public void HitHandler(RPG_Character sender, uint damageValue)
+        {
+            sender.currentHP -= damageValue;
+        }
+       
 
 
 

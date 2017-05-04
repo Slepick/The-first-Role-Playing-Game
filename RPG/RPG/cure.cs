@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 
 namespace RPG
@@ -14,14 +15,7 @@ namespace RPG
         public override void Cast(RPG_Character character,uint power=0)
         {
             if (character.cond == RPG_Character.condition.Sick)
-            {
-                Random rand = new Random();
-                if ((rand.Next() & 1) == 0)
-                    character.cond = RPG_Character.condition.Normal;
-                else
-                    character.cond = RPG_Character.condition.Weakened;
-
-            }
+                character.ChangeStatusToNormal();            
         }
     }
 }

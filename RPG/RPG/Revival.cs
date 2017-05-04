@@ -15,12 +15,7 @@ namespace RPG
         {
             if (character.cond == RPG_Character.condition.Dead)
             {
-                Random rand = new Random();
-                if ((rand.Next() & 1) == 0)
-                    character.cond = RPG_Character.condition.Normal;
-                else
-                    character.cond = RPG_Character.condition.Weakened;
-                character.currentHP = 1;
+                character.currentHP=1;
             }
         }
     }

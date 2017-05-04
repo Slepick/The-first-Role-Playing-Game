@@ -7,7 +7,7 @@ namespace RPG
 {
     class RestoreHP : Spell
     {
-        public RestoreHP(uint requiredMP, bool isSilent, bool isStaned) : base(requiredMP, isSilent, isStaned)
+        public RestoreHP(uint power, bool isSilent, bool isStaned) :base(power*2,isSilent,isStaned)
         {
         }
 
