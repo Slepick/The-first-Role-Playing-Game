@@ -106,7 +106,6 @@ namespace RPG
             }
         }
 
-
         //ToString
         public override string ToString()
         {
@@ -126,50 +125,7 @@ namespace RPG
         public void HitHandler(RPG_Character sender, uint damageValue)
         {
             sender.currentHP -= damageValue;
-        }
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }       
+        
     }
 }

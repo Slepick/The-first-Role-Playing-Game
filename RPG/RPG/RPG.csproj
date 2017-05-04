@@ -43,15 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="CharacterWieldingMagic.cs" />
-=======
     <Compile Include="Antidote.cs" />
+    <Compile Include="CharacterWieldingMagic.cs" />
     <Compile Include="Cure.cs" />
     <Compile Include="DeathRattleEventArgs.cs" />
     <Compile Include="IMagic.cs" />
     <Compile Include="Immunity.cs" />
->>>>>>> origin/master
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestoreHP.cs" />
