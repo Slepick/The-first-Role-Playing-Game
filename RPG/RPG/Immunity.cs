@@ -6,25 +6,30 @@ using System.Threading;
 
 namespace RPG
 {
+
     class Immunity : Spell
     {
         int power;
-        public Immunity(int power, bool isSilent, bool isStaned) : base((uint)(50*power), isSilent, isStaned)
+        public Immunity(int power, bool isSilent, bool isStaned) : base((uint)(50 * power), isSilent, isStaned)
         {
-           this.power = power;
-        }
-        void getImmunity(RPG_Character character,int power)
-        {
-        }
-        
-        public override void Cast(RPG_Character character, uint power)
-        {
-            character.Hit -= character.HitHandler;
-            Thread.Sleep((int)power);
-            character.Hit += character.HitHandler;
+            this.power = power;
         }
 
-       
-       
+        public override void Cast(RPG_Character character, uint power)
+        {
+            character.Hit -= character.HitHandler;                          // Отключаю обработчик события hit
+            TimerCallback tm = new TimerCallback(returnSusceptibility);     // Метод, который будет выполнять таймер в новом треде
+                                                                            // Новый тред создаётся автоматически
+            Timer timer = new Timer(tm, character, 0, -1);                  // Первый параметр метод,второй параметр объекта, 
+                                                                            // 0 - чтобы выполнялся без задрежки,-1 не повторяясь
+        }
+        private void returnSusceptibility(object character)
+        {
+            Thread.Sleep(power);                                            // Жду 
+            (character as RPG_Character).Hit += (character as RPG_Character).HitHandler; // Подключаю снова
+        }
     }
+
+
+
 }
