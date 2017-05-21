@@ -9,10 +9,10 @@ namespace RPG
 
     class Immunity : Spell
     {
-        int power;
+        public int Power;
         public Immunity(int power, bool isSilent, bool isStaned) : base((uint)(50 * power), isSilent, isStaned)
         {
-            this.power = power;
+            this.Power = power;
         }
 
         public override void Cast(RPG_Character character, uint power)
@@ -25,7 +25,7 @@ namespace RPG
         }
         private void returnSusceptibility(object character)
         {
-            Thread.Sleep(power);                                            // Жду 
+            Thread.Sleep(Power);                                            // Жду 
             (character as RPG_Character).Hit += (character as RPG_Character).HitHandler; // Подключаю снова
         }
     }

@@ -7,31 +7,24 @@ using System.Threading;
 namespace RPG
 
 {
-
-    delegate void HitHandler(RPG_Character character,uint damageValue);
-
+    public enum condition { Normal, Weakened, Sick, Poisoned, Paralyzed, Dead };
+    delegate void HitHandler(RPG_Character character, uint damageValue);
+    public enum race { Human, Dwarf, Elf, Ork, Goblin };
     [Serializable]
     class RPG_Character : IComparable
     {
-
         public event HitHandler Hit; // Событие, происходящее, если персонажу нанесли урон
-        /// <summary>
-        /// поля
-        /// </summary>
-        /// 
         private static uint nextID = 1;
         private uint ID { get; set; }
-        private string name { get; set; }                                           //имя       
-        public enum condition { Normal, Weakened, Sick, Poisoned, Paralyzed, Dead };       //состояние
-        public condition cond { get; set; }
-        public bool talkative { get; set; }                                         //возможность разговаривать
-        public bool walkable { get; set; }                                          //возможность двигаться
-        public enum race { Human, Dwarf, Elf, Ork, Goblin };                               //раса
-        private race race_type { get; set; }
-        private bool isMAle { get; set; }                                              //пол(женский false, мужской true)(а может enum?)
-        public uint age { get; set; }                                               //возраст
-        public uint currentHP;  //текущее здоровье
-        public uint CurrentHP // Свойство текущего здоровья
+        private string Name { get; set; }           // Имя                                                                                   
+        public condition Cond { get; set; }         // Состояние
+        public bool IsTalkative { get; set; }         // Возможность разговаривать
+        public bool IsWalkable { get; set; }          // Возможность двигаться
+        private race race_type { get; set; }        // Раса
+        private bool isMale { get; set; }           // Пол(женский false, мужской true)(а может enum?)
+        public uint Age { get; set; }               // Возраст
+        private uint currentHP;                     // Текущее здоровье
+        public uint CurrentHP                       // Свойство текущего здоровья
         {
             get
             {
@@ -39,41 +32,48 @@ namespace RPG
             }
             set
             {
-                if (cond != condition.Dead)
+
+                if (Cond != condition.Dead)
                 {
+                    if (value < 0)          // Чтобы в минус не ушло
+                        value = 0;
                     if (currentHP > value)
                     {
-                        if (Hit != null) // Если эта строка полупрозрачная, 
-                                         //не верьте, она нужна. Visual Studio - поехаший чувак.
+                        if (Hit != null)   // Это нужно,ибо я буду отключать обработчик при неуязвимости
                             Hit(this, currentHP - value);
                     }
                     else
-                        currentHP = value;
-                    if (cond == condition.Normal || cond == condition.Weakened || currentHP == 0)
+                    {
+                        if (value > MaxHP)
+                            currentHP = MaxHP;
+                        else
+                            currentHP = value;
+                    }
+                    if (Cond == condition.Normal || Cond == condition.Weakened || currentHP == 0)
                         ChangeStatusToNormal();
                 }
             }
         }
-        public uint maxHP { get; set; }                                             //макс здоровье
+        public uint MaxHP { get; set; }                                             //макс здоровье
         public uint Expirience { get; set; }                                        // опыт
-
+        public List<Artefact> Invetory = new List<Artefact>();
 
 
         /// <summary>
-        /// конструктор неизменяемых полей
-        /// </summary>
-        /// <param name="Name"></param>
-        /// <param name="R"></param>
-        /// <param name="Sex"></param>
-        public RPG_Character(string Name, race R, bool Sex)
-        {
-            maxHP = 100;// я пока поставил по умолчанию 100 хп,возможно это должно зависеть от расы
-            currentHP = maxHP;
-            name = Name;
-            race_type = R;
-            isMAle = Sex;
+        /// Конструктор неизменяемых полей
+        /// </summary>        
+        public RPG_Character(string Name, race Race, bool Sex, uint MaxHP=100, uint Expirience=0)
+        {            
+            this.Name = Name;
+            race_type = Race;
+            isMale = Sex;
             ID = nextID;
             nextID++;
+            this.MaxHP = MaxHP;
+            currentHP = MaxHP;
+            this.Expirience = Expirience;
+            IsTalkative = true;
+            IsWalkable = true;
             Hit += HitHandler;
         }
 
@@ -94,49 +94,65 @@ namespace RPG
             return 0;
         }
 
-        /// <summary>
-        /// надеюсь про здоровье это событие и его реализация в DeathRattle(данные для события) и HP_Change(класс-событие)
-        /// обработчик события
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="ev"></param>        
+
         public void ChangeStatusToNormal()
         {
-            double percent = 100.0 * currentHP / maxHP;
-            if ((percent >= 10) && (cond != condition.Normal))
+            double percent = 100.0 * currentHP / MaxHP;
+            if ((percent >= 10) && (Cond != condition.Normal))
             {
-                cond = condition.Normal;
+                Cond = condition.Normal;
             }
-            if ((percent > 0) && (percent < 10) && (cond != condition.Weakened))
+            if ((percent > 0) && (percent < 10) && (Cond != condition.Weakened))
             {
-                cond = condition.Weakened;
+                Cond = condition.Weakened;
             }
             if (percent == 0)
             {
-                cond = condition.Dead;
+                Cond = condition.Dead;
             }
         }
 
-        //ToString
         public override string ToString()
         {
-            return base.ToString() + ":\n "
-                + "\n Идентификатор персонажа: " + ID.ToString()
-                + "\n Имя персонажа: " + name.ToString()
-                + "\n Состояние персонажа: " + cond.ToString()
-                + "\n Возможность персонажа разговаривать: " + talkative.ToString()
-                + "\n Возможность персонажа передвигаться: " + walkable.ToString()
-                + "\n Раса персонажа: " + race_type.ToString()
-                + "\n Пол персонажа: " + isMAle.ToString()
-                + "\n Возраст персонажа: " + age.ToString()
-                + "\n Текущее здоровье персонажа: " + currentHP.ToString()
-                + "\n Максимальное здоровье персонажа: " + maxHP.ToString()
-                + "\n Опыт персонажа: " + Expirience.ToString();
+            return  "Идентификатор персонажа: " + ID.ToString()
+                + "\nИмя персонажа: " + Name.ToString()
+                + "\nСостояние персонажа: " + Cond.ToString()
+                + "\nВозможность персонажа разговаривать: " + IsTalkative.ToString()
+                + "\nВозможность персонажа передвигаться: " + IsWalkable.ToString()
+                + "\nРаса персонажа: " + race_type.ToString()
+                + "\nПол персонажа: " + isMale.ToString()
+                + "\nВозраст персонажа: " + Age.ToString()
+                + "\nТекущее здоровье персонажа: " + currentHP.ToString()
+                + "\nМаксимальное здоровье персонажа: " + MaxHP.ToString()
+                + "\nОпыт персонажа: " + Expirience.ToString();
         }
-        public void HitHandler(RPG_Character character , uint damageValue)
+        public void HitHandler(RPG_Character character, uint damageValue)
         {
             character.currentHP -= damageValue;
         }
 
+        public void AddInInventory(Artefact art)
+        {
+            Invetory.Add(art);
+        }
+        public bool RemoveFromInventory(Artefact art)
+        {
+            return Invetory.Remove(art);
+        }
+        public void GiveArt(RPG_Character character, Artefact art)
+        {
+            if (Invetory.Contains(art))
+                Invetory.Remove(art);
+            character.Invetory.Add(art);
+        }
+        public void UseArt(Artefact art, RPG_Character character = null, uint power = 0)
+        {
+            if (Invetory.Contains(art))
+            {
+                art.Cast(character, power);
+                if (art.IsRenewable == false)
+                    Invetory.Remove(art);
+            }
+        }
     }
 }

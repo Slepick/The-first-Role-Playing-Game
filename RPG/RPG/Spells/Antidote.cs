@@ -5,14 +5,14 @@ using System.Text;
 
 namespace RPG
 {
-    class Unfreeze : Spell
+    class Antidote:Spell
     {
-        public Unfreeze(uint requiredMP, bool isSilent, bool isStaned) : base(requiredMP, isSilent, isStaned)
+        public Antidote(uint requiredMP, bool isSilent, bool isStaned) : base(requiredMP, isSilent, isStaned)
         {
         }
         public override void Cast(RPG_Character character, uint power = 0)
         {
-            if (character.cond == RPG_Character.condition.Sick)
+            if (character.Cond == condition.Poisoned)
                 character.ChangeStatusToNormal();
         }
     }

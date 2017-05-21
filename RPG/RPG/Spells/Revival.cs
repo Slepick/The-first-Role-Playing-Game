@@ -13,9 +13,9 @@ namespace RPG
 
         public override void Cast(RPG_Character character, uint power = 0)
         {
-            if (character.cond == RPG_Character.condition.Dead)
+            if (character.Cond == condition.Dead)
             {
-                character.currentHP=1;
+                character.CurrentHP=1;
             }
         }
     }

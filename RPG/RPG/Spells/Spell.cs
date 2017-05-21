@@ -8,13 +8,13 @@ namespace RPG
     abstract class Spell : IMagic
     {
         public uint requiredMP;
-        public bool isSilent;
-        public bool isStaned;
-        public Spell(uint requiredMP, bool isSilent, bool isStaned)
+        public bool CanBeSilent;
+        public bool CanBeStaned;
+        public Spell(uint requiredMP, bool CanBeSilent, bool CanBeStaned)
         {
             this.requiredMP = requiredMP;
-            this.isSilent = isSilent;
-            this.isStaned = isStaned;
+            this.CanBeSilent = CanBeSilent;
+            this.CanBeStaned = CanBeStaned;
         }
         public abstract void Cast(RPG_Character character, uint power);
         //public abstract void Cast(RPG_Character character);

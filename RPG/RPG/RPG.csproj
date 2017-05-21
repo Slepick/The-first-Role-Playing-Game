@@ -43,20 +43,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Antidote.cs" />
+    <Compile Include="Artefacts\Dead_Water_Bottle.cs" />
+    <Compile Include="Artefacts\Decoction_Of_Frog_Legs.cs" />
+    <Compile Include="Artefacts\Eyes_Of_The Basilisk.cs" />
+    <Compile Include="Artefacts\Poisonous_Saliva.cs" />
+    <Compile Include="Artefacts\Staff_Of_Lightning.cs" />
+    <Compile Include="Spells\Antidote.cs" />
+    <Compile Include="Artefacts\Artefact.cs" />
     <Compile Include="CharacterWieldingMagic.cs" />
-    <Compile Include="Cure.cs" />
+    <Compile Include="Spells\Cure.cs" />
     <Compile Include="DeathRattleEventArgs.cs" />
     <Compile Include="IMagic.cs" />
-    <Compile Include="Immunity.cs" />
+    <Compile Include="Spells\Immunity.cs" />
+    <Compile Include="Artefacts\Living_Water_Bottle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestoreHP.cs" />
-    <Compile Include="Revival.cs" />
+    <Compile Include="Spells\RestoreHP.cs" />
+    <Compile Include="Spells\Revival.cs" />
     <Compile Include="RPG_Character.cs" />
-    <Compile Include="Spell.cs" />
-    <Compile Include="Unfreeze.cs" />
+    <Compile Include="Spells\Spell.cs" />
+    <Compile Include="Spells\Unfreeze.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

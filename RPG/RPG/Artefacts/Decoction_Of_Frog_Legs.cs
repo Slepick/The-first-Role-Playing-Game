@@ -5,15 +5,15 @@ using System.Text;
 
 namespace RPG
 {
-    class Antidote:Spell
+    class Decoction_Of_Frog_Legs: Artefact
     {
-        public Antidote(uint requiredMP, bool isSilent, bool isStaned) : base(requiredMP, isSilent, isStaned)
-        {
-        }
+        public Decoction_Of_Frog_Legs() : base(0, false)
+        { }
         public override void Cast(RPG_Character character, uint power = 0)
         {
-            if (character.cond == RPG_Character.condition.Poisoned)
+            if (character.Cond == condition.Poisoned)
                 character.ChangeStatusToNormal();
         }
+
     }
 }

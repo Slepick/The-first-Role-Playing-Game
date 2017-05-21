@@ -14,7 +14,7 @@ namespace RPG
 
         public override void Cast(RPG_Character character,uint power=0)
         {
-            if (character.cond == RPG_Character.condition.Sick)
+            if (character.Cond == condition.Sick)
                 character.ChangeStatusToNormal();            
         }
     }
