@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5f399c8cac6c51045a13b0f14666e044
-timeCreated: 1494762374
+guid: d51548d8efa66c14495700d7bdaf06ee
+timeCreated: 1495823353
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -1757,7 +1757,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1765,7 +1765,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -12671,8 +12671,8 @@ TextureImporter:
       name: roguelikeSheet_transparent_838
       rect:
         serializedVersion: 2
-        x: 121
-        y: 266
+        x: 119
+        y: 255
         width: 16
         height: 16
       alignment: 0

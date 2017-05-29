@@ -37,8 +37,17 @@ public class HealthManager : MonoBehaviour {
             playerCurrentMana = 0;
     }
 
-    public void SetMaxHealth()
+    public void AddHealth(int health)
     {
-        playerCurrentHealth = playerMaxHealth;
+        playerCurrentHealth += health;
+        if (playerCurrentHealth > playerMaxHealth)
+            playerCurrentHealth = playerMaxHealth;
+    }
+
+    public void AddMana(int mana)
+    {
+        playerCurrentMana += mana;
+        if (playerCurrentMana > playerMaxMana)
+            playerCurrentMana = playerMaxMana;
     }
 }

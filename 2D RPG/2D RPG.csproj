@@ -79,18 +79,45 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\CharacterWieldingMagic.cs" />
     <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
+    <Compile Include="Assets\Scripts\Drag.cs" />
+    <Compile Include="Assets\Scripts\Drop.cs" />
     <Compile Include="Assets\Scripts\EnemyHealthManager.cs" />
     <Compile Include="Assets\Scripts\FloatingNumbers.cs" />
+    <Compile Include="Assets\Scripts\GameInventory.cs" />
     <Compile Include="Assets\Scripts\HealthManager.cs" />
+    <Compile Include="Assets\Scripts\HealthPotions.cs" />
     <Compile Include="Assets\Scripts\HurtEnemy.cs" />
     <Compile Include="Assets\Scripts\HurtPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\RPG_Character.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\Artefact.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\Dead_Water_Bottle.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\Decoction_Of_Frog_Legs.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\Eyes_Of_The Basilisk.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\HandItem.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\Item.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\Living_Water_Bottle.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\Poisonous_Saliva.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Artefacts\Staff_Of_Lightning.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\CharacterWieldingMagic.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\DeathRattleEventArgs.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\IMagic.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Program.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\RPG_Character.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Spells\Antidote.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Spells\Cure.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Spells\Immunity.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Spells\RestoreHP.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Spells\Revival.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Spells\Spell.cs" />
+    <Compile Include="Assets\Scripts\RPG\RPG\Spells\Unfreeze.cs" />
     <Compile Include="Assets\Scripts\SlimeController.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Scripts\RPG\RPG\obj\x86\Debug\RPG.csproj.FileListAbsolute.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

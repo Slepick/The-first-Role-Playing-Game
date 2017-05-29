@@ -10,12 +10,30 @@ public class PlayerMovement : MonoBehaviour {
     private bool attacking;
     public float attackTime;
     private float attackTimeCounter;
+    private static string name = "Seva";
+    public CharacterWieldingMagic myHero = new CharacterWieldingMagic(name, race.Human, true, 30, 0, 15);
+    public Transform weapon;
+    private HandItem item;
+
     // Use this for initialization
     void Start () {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        //myHero = new CharacterWieldingMagic(name, race.Human, true, 30, 0, 15);
     }
 	
+    public void addHand(HandItem it)
+    {
+        {
+            if (item != null)
+                item.transform.SetParent(null);
+        }
+        it.transform.SetParent(weapon);
+        it.transform.localPosition = it.position;
+        it.transform.localRotation = Quaternion.Euler(it.rotation);
+        item = it;
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (!attacking)
