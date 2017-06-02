@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ad962b8871597894da86c2425ec0e8c7
-timeCreated: 1496136519
+timeCreated: 1496424451
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -266,12 +266,12 @@ TextureImporter:
       name: Staff
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 81
+        y: 32
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.10110974, y: -0.48855352}
+      pivot: {x: 0.5346856, y: 0.50000024}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

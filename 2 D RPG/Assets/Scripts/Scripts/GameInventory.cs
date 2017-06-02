@@ -11,8 +11,9 @@ public class GameInventory : MonoBehaviour
     public GameObject container;
     public PlayerMovement playerContr;
     public static Sprite pic;
+    public GameObject scroll;
     // Use this for initialization
-    
+
     void Start()
     {
         pic = container.GetComponent<Image>().sprite;
@@ -60,7 +61,11 @@ public class GameInventory : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.I))
         {
             inventory.SetActive(!inventory.activeSelf);
-        }       
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            scroll.SetActive(false);
+        }
     }
 
     
@@ -89,8 +94,9 @@ public class GameInventory : MonoBehaviour
             HandItem myitem;
             myitem = Instantiate<GameObject>(Resources.Load<GameObject>(drag.item.prefab)).GetComponent<HandItem>();
             playerContr.gameObject.GetComponent<PlayerMovement>().addHand(myitem);
-
         }
+        else
+            scroll.SetActive(true);
 
 
 

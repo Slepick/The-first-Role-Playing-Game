@@ -47,7 +47,7 @@ namespace RPG
         public void Cast(Spell spl, RPG_Character character = null, uint power = 0)
         {
             if (StudiedSpells.Contains(spl) && (IsWalkable || spl.CanBeSilent)
-                && (IsTalkative || spl.CanBeStaned) && currentMP > spl.requiredMP)
+                && (IsTalkative || spl.CanBeStaned) && currentMP >= spl.requiredMP)
             {
                 spl.Cast(character, power);
                 CurrentMP -= spl.requiredMP;
