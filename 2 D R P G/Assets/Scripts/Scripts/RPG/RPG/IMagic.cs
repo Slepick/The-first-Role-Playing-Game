@@ -7,7 +7,7 @@ namespace RPG
 {
     public interface IMagic
     {
-        void Cast(RPG_Character character, uint power=0);
+        void Cast(RPG_Character character=null, uint power=0);
         //void Cast(RPG_Character character);
         //void Cast(uint power);
         //void Cast();

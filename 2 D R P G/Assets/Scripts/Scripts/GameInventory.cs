@@ -12,6 +12,7 @@ public class GameInventory : MonoBehaviour
     public PlayerMovement playerContr;
     public static Sprite pic;
     public GameObject scroll;
+    private float distance;
     // Use this for initialization
 
     void Start()
@@ -24,9 +25,9 @@ public class GameInventory : MonoBehaviour
         
     }
 
-    public void AddInInventory(Item it)
+    public bool AddInInventory(Item it)
     {
-        int empty = 0;
+        int empty = -1;
         for (int k = 0; k < inventory.transform.childCount; k++)
         {
             if (inventory.transform.GetChild(k).transform.childCount == 0)
@@ -35,11 +36,15 @@ public class GameInventory : MonoBehaviour
                 break;
             }
         }
+       
+        if (empty == -1)
+            return false;
         list.Add(it);
         GameObject img = Instantiate(container);
         img.transform.SetParent(inventory.transform.GetChild(empty).transform);
         inventory.transform.GetChild(empty).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(it.sprite);
         inventory.transform.GetChild(empty).transform.GetChild(0).GetComponent<Drag>().item = it;
+        return true;
     }
     // Update is called once per frame
     void Update()
@@ -50,11 +55,15 @@ public class GameInventory : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, Input.mousePosition, 1.0f); 
             if (hit.collider != null)
             {
-                Item it = hit.collider.GetComponent<Item>();
-                if (it != null)
+                distance = Vector2.Distance(transform.position, hit.collider.transform.position);
+                if (distance < 1.2f)
                 {
-                    AddInInventory(it);
-                    Destroy(hit.collider.gameObject);
+                    Item it = hit.collider.GetComponent<Item>();
+                    if (it != null)
+                    {
+                        if(AddInInventory(it))
+                        Destroy(hit.collider.gameObject);
+                    }
                 }
             }
         }
@@ -84,7 +93,7 @@ public class GameInventory : MonoBehaviour
         if (drag.item is Artefact)
         {
             RPG.RPG_Character Player = GameObject.Find("Player").GetComponent<RPG.RPG_Character>();
-            Player.UseArt(drag.item as Artefact, Player);
+            Player.UseArt(drag.item as Artefact, Player.Target);
             if (!(drag.item as Artefact).IsRenewable)
                 Destroy(drag.gameObject);
             
@@ -94,6 +103,8 @@ public class GameInventory : MonoBehaviour
             HandItem myitem;
             myitem = Instantiate<GameObject>(Resources.Load<GameObject>(drag.item.prefab)).GetComponent<HandItem>();
             playerContr.gameObject.GetComponent<PlayerMovement>().addHand(myitem);
+            list.Remove(drag.item);
+            Destroy(drag.gameObject);
         }
         else
             scroll.SetActive(true);

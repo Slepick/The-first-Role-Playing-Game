@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour {
                 rbody.MovePosition(rbody.position + 0.75f * movement_vector * Speed * Time.deltaTime);
             else
                 rbody.MovePosition(rbody.position + movement_vector * Speed * Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.G) && item != null)
+            if (Input.GetKeyDown(KeyCode.G) && item != null && gameObject.GetComponent<RPG.RPG_Character>().Cond!=RPG.condition.Paralyzed)
             {
                 attackTimeCounter = attackTime;
                 attacking = true;

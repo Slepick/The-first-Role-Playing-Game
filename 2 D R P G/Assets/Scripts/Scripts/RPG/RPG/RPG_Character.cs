@@ -17,13 +17,13 @@ namespace RPG
         public RPG_Character Target;
         public event HitHandler Hit; // Событие, происходящее, если персонажу нанесли урон
         private static uint nextID = 1;
-        private uint ID { get; set; }
-        private string Name { get; set; }           // Имя                                                                                   
+        private uint ID;// { get; set; }
+        private string Name; //{ get; set; }           // Имя                                                                                   
         public condition Cond; //{ get; set; }         // Состояние
         public bool IsTalkative=true;//{ get; set; }         // Возможность разговаривать
         public bool IsWalkable=true;//{ get; set; }          // Возможность двигаться
-        private race race_type { get; set; }        // Раса
-        private bool isMale { get; set; }           // Пол(женский false, мужской true)(а может enum?)
+        private race race_type;//{ get; set; }        // Раса
+        private bool isMale;//{ get; set; }           // Пол(женский false, мужской true)(а может enum?)
         public uint Age { get; set; }               // Возраст
         public uint currentHP;                     // Текущее здоровье
         public uint CurrentHP                       // Свойство текущего здоровья
@@ -37,7 +37,7 @@ namespace RPG
 
                 if (Cond != condition.Dead)
                 {
-                    if (value < 0)          // Чтобы в минус не ушло
+                    if ((int)value < 0)          // Чтобы в минус не ушло
                         value = 0;
                     if (currentHP > value)
                     {
@@ -61,7 +61,6 @@ namespace RPG
         public uint Expirience { get; set; }                                        // опыт
         public List<Item> Invetory;
 
-
         /// <summary>
         /// Конструктор неизменяемых полей
         /// </summary>        
@@ -80,12 +79,7 @@ namespace RPG
             Hit += HitHandler;
             Invetory = new List<Item>();
         }
-
-        /// <summary>
-        /// метод для реализации интерфейса
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
+        
         public int CompareTo(object obj)
         {
             if (!(obj is RPG_Character))
@@ -148,7 +142,7 @@ namespace RPG
         {
             if (Invetory.Contains(art))
                 Invetory.Remove(art);
-            character.Invetory.Add(art);
+            character.AddInInventory(art);
         }
         public void UseArt(Artefact art, RPG_Character character = null, uint power = 0)
         {
@@ -161,7 +155,7 @@ namespace RPG
         }
         virtual public void Start()
         {
-           // Hit += HitHandler;
+            Hit += HitHandler;
         }
         private void Update()
         {

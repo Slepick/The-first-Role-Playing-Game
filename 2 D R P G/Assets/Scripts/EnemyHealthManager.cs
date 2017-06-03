@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class EnemyHealthManager : MonoBehaviour {
 
-    public int CurrentHealth;
-    public int MaxHealth;
     private PlayerStats thePlayerStats;
     public int expToGive;
     // Use this for initialization
     void Start()
     {
-        CurrentHealth = MaxHealth;
+
+        this.gameObject.GetComponent<RPG.RPG_Character>().CurrentHP = this.gameObject.GetComponent<RPG.RPG_Character>().MaxHP;
         thePlayerStats = FindObjectOfType<PlayerStats>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (CurrentHealth <= 0)
+        if (this.gameObject.GetComponent<RPG.RPG_Character>().CurrentHP <= 0)
         {
             thePlayerStats.AddExperience(expToGive);
             Destroy(gameObject);
@@ -27,12 +26,12 @@ public class EnemyHealthManager : MonoBehaviour {
 
     public void HurtEnemy(int damageToGive)
     {
-        CurrentHealth -= damageToGive;
+        this.gameObject.GetComponent<RPG.RPG_Character>().CurrentHP -= (uint)damageToGive;
     }
 
     public void SetMaxHealth()
     {
-        CurrentHealth = MaxHealth;
+        this.gameObject.GetComponent<RPG.RPG_Character>().CurrentHP = this.gameObject.GetComponent<RPG.RPG_Character>().MaxHP;
     }
 }
 

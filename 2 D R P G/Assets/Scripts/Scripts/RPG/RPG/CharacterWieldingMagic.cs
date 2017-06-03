@@ -66,18 +66,5 @@ namespace RPG
             Target = this;
 
         }
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                Cast(StudiedSpells[0], Target);
-            }
-
-            //for(int1 i=48;i<=54;i++)
-            //if (Input.GetKeyDown((KeyCode)i))
-            //{
-            //    Cast(StudiedSpells[i], Target, 0);
-            //}
-        }
     }
 }

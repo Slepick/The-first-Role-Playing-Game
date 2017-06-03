@@ -39,6 +39,10 @@ public class Pause : MonoBehaviour
             GameObject.Find("Player").GetComponent<Animator>().enabled = true;
         }
     }
+    public void NewGame()
+    {
+        Application.LoadLevel(1);
+    }
     public void Continue()
     {
         ispuse = false;
