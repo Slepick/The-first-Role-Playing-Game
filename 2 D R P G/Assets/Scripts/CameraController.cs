@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour {
     private static bool cameraExists;
 	// Use this for initialization
 	void Start () {
-        DontDestroyOnLoad(transform.gameObject);
+        /*DontDestroyOnLoad(transform.gameObject);
         if (!cameraExists)
         {
             cameraExists = true;
@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour {
 
         }
         else
-            Destroy(gameObject);
+            Destroy(gameObject);*/
     }
 	
 	// Update is called once per frame

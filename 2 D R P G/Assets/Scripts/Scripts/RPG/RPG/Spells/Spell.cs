@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 namespace RPG
 {
-    public abstract class Spell : IMagic
+    public abstract class Spell : MonoBehaviour, IMagic
     {
+        public GameObject effect;
         public string sprite;
         public uint requiredMP;
         public bool CanBeSilent;
         public bool CanBeStaned;
+        
+        private void Start()
+        {
+            
+        }
         // public string Text;
         public Spell(uint requiredMP, bool CanBeSilent, bool CanBeStaned)
         {

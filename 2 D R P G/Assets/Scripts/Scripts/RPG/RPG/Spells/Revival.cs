@@ -7,6 +7,11 @@ namespace RPG
 {
     public class Revival : Spell
     {
+        public PlayerMovement thePlayer;
+        private void Start()
+        {
+            thePlayer = FindObjectOfType<PlayerMovement>();
+        }
         public Revival(uint requiredMP, bool isSilent, bool isStaned) : base(requiredMP, isSilent, isStaned)
         {
         }
@@ -19,6 +24,8 @@ namespace RPG
                 character.Cond = condition.Weakened;
                 character.CurrentHP=1;
             }
+            Instantiate(effect, thePlayer.transform.position, thePlayer.transform.rotation);
+            var clone = (GameObject)Instantiate(effect, thePlayer.transform.position, Quaternion.Euler(Vector3.zero));
         }
     }
 }

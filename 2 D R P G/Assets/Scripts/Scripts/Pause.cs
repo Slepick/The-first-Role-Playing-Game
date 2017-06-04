@@ -41,7 +41,10 @@ public class Pause : MonoBehaviour
     }
     public void NewGame()
     {
-        Application.LoadLevel(1);
+        Application.LoadLevel("House");
+        ispuse = false;
+        timer = 0;
+        MenuPanel.SetActive(false);
     }
     public void Continue()
     {

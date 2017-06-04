@@ -8,6 +8,7 @@ namespace RPG
     public class RestoreHP : Spell
     {
         public uint Power;
+        public PlayerMovement thePlayer; 
         public RestoreHP(uint power, bool isSilent, bool isStaned) : base(power * 2, isSilent, isStaned)
         {
             Power = power;
@@ -19,10 +20,12 @@ namespace RPG
                 character.CurrentHP += Power;
             else
                 character.CurrentHP += power;
+            Instantiate(effect, thePlayer.transform.position, thePlayer.transform.rotation);
+            var clone = (GameObject)Instantiate(effect, thePlayer.transform.position, Quaternion.Euler(Vector3.zero));
         }
         private void Start()
         {
-
+            thePlayer = FindObjectOfType<PlayerMovement>();
         }
         
     }

@@ -85,7 +85,7 @@ public class Effects : MonoBehaviour
         }
         if (person.Cond != RPG.condition.Sick)
         {
-            //if (gameObject.GetComponent<PlayerMovement>() != null)
+            if (gameObject.GetComponent<PlayerMovement>() != null)
             {
                 gameObject.GetComponent<PlayerMovement>().Speed = 4;
                 gameObject.GetComponent<PlayerMovement>().enabled = true;

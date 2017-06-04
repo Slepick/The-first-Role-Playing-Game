@@ -8,7 +8,8 @@ public class scriptMainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        Application.LoadLevel(1);
+        Application.LoadLevel(0);
+        
     }
     public void Control()
     {

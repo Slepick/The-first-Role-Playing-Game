@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //myHero = new CharacterWieldingMagic(name, race.Human, true, 30, 0, 15);
-        if (!playerExists)
+        /*if (!playerExists)
         {
             playerExists = true;
             DontDestroyOnLoad(transform.gameObject);
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         else
             Destroy(gameObject);
-        canMove = true;
+        canMove = true;*/
     }
 	
     public void addHand(HandItem it)

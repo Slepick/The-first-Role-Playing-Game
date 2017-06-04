@@ -19,14 +19,14 @@ public class UIManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         thePlayerStats = GetComponent<PlayerStats>();
-        if (!UIExist)
+        /*if (!UIExist)
         {
             UIExist = true;
             DontDestroyOnLoad(transform.gameObject);
 
         }
         else
-            Destroy(gameObject);
+            Destroy(gameObject);*/
     }
 	
 	// Update is called once per frame

@@ -33,7 +33,7 @@ public class HurtPlayer : MonoBehaviour {
                 {
                     currentDamage = 1;
                 }
-                other.gameObject.GetComponent<RPG.RPG_Character>().CurrentHP -= (uint)damageToGive;
+                other.gameObject.GetComponent<RPG.RPG_Character>().CurrentHP -= (uint)currentDamage;
                 var clone = (GameObject)Instantiate(damageNumber, other.transform.position, Quaternion.Euler(Vector3.zero));
                 clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
                 timeToAttackCounter = timeToAttack;
