@@ -1,0 +1,82 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 630M (ID=0xde9)
+    Vendor:   NVIDIA
+    VRAM:     978 MB
+    Driver:   21.21.13.7633
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.081 seconds
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.147543 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.914706 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2253.
+Total: 1.659193 ms (FindLiveObjects: 0.158649 ms CreateObjectMapping: 0.067565 ms MarkObjects: 1.240546 ms  DeleteObjects: 0.192004 ms)
+
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 630M (ID=0xde9)
+    Vendor:   NVIDIA
+    VRAM:     978 MB
+    Driver:   21.21.13.7633
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.031 seconds
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Влад\Desktop\e65789\The-first-Role-Playing-Game\2 D R P G\Game\preAlpha_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.794323 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.645301 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2253.
+Total: 1.451794 ms (FindLiveObjects: 0.200557 ms CreateObjectMapping: 0.059867 ms MarkObjects: 1.045120 ms  DeleteObjects: 0.144965 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.851013 ms
+
+Unloading 198 unused Assets to reduce memory usage. Loaded Objects now: 392.
+Total: 2.291226 ms (FindLiveObjects: 0.095788 ms CreateObjectMapping: 0.107334 ms MarkObjects: 0.673940 ms  DeleteObjects: 1.412452 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1c60 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.553349 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 2253.
+Total: 1.423998 ms (FindLiveObjects: 0.165491 ms CreateObjectMapping: 0.059867 ms MarkObjects: 1.038278 ms  DeleteObjects: 0.159504 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1164 -> priority: 1 

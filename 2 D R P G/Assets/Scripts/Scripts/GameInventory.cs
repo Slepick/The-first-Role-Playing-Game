@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameInventory : MonoBehaviour
 {
-    public static List<Item> list;
+    public  List<Item> list;
     public GameObject inventory;
     public GameObject container;
     public PlayerMovement playerContr;
@@ -20,7 +20,7 @@ public class GameInventory : MonoBehaviour
         pic = container.GetComponent<Image>().sprite;
         //person = GetComponent<PlayerMovement>().myHero;
         
-        list = GameObject.Find("Player").GetComponent<RPG_Character>().Invetory;
+        list = GameObject.Find("Player").GetComponent<RPG.RPG_Character>().Invetory;
         playerContr = GetComponent<PlayerMovement>();
         
     }

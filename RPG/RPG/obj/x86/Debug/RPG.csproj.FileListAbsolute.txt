@@ -1,5 +1,0 @@
-C:\Users\Влад\Desktop\The-first-Role-Playing-Game\RPG\RPG\obj\x86\Debug\RPG.csprojResolveAssemblyReference.cache
-C:\Users\Влад\Desktop\The-first-Role-Playing-Game\RPG\RPG\bin\Debug\RPG.exe
-C:\Users\Влад\Desktop\The-first-Role-Playing-Game\RPG\RPG\bin\Debug\RPG.pdb
-C:\Users\Влад\Desktop\The-first-Role-Playing-Game\RPG\RPG\obj\x86\Debug\RPG.exe
-C:\Users\Влад\Desktop\The-first-Role-Playing-Game\RPG\RPG\obj\x86\Debug\RPG.pdb

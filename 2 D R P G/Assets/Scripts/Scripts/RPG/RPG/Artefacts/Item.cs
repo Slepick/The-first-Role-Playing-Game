@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG;
-using RPG.Artefacts;
 
 public class Item : MonoBehaviour {
 

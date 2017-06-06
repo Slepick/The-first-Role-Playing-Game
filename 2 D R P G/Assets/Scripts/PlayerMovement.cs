@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
     public float attackTime;
     private float attackTimeCounter;
     private static string name = "Seva";
-    public CharacterWieldingMagic myHero = new CharacterWieldingMagic(name, race.Human, true, 30, 0, 15);
+    //public CharacterWieldingMagic myHero = new CharacterWieldingMagic(name, race.Human, true, 30, 0, 15);
     public Transform weapon;
     private HandItem item;
     private static bool playerExists;

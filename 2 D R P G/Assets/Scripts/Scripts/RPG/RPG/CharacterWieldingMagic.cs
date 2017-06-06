@@ -20,8 +20,6 @@ namespace RPG
             {
                 if (Cond != condition.Dead)
                 {
-                    if (value < 0)
-                        value = 0;
                     if (value > MaxMP)
                         currentMP = MaxMP;
                     else
@@ -60,11 +58,9 @@ namespace RPG
                                    + "\nМаксимально кол-во маны персонажа: " + MaxMP.ToString();
         }
         public void Start()
-        {
-            
+        {            
             Hit += HitHandler;          
             Target = this;
-
         }
     }
 }

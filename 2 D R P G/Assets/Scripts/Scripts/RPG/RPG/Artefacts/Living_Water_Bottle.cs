@@ -46,7 +46,7 @@ namespace RPG
                     Energy = 25;
                     break;
                 case Size.Small:
-                    Energy = 25;
+                    Energy = 10;
                     break;
             }
         }

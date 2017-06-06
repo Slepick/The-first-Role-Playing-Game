@@ -96,11 +96,11 @@ public class Effects : MonoBehaviour
 
     public void Poisoned(object person)
     {
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 8; i++)
         {
             if ((person as RPG.RPG_Character).Cond != RPG.condition.Poisoned)
                 break;
-            (person as RPG.RPG_Character).CurrentHP -= 4;
+            (person as RPG.RPG_Character).CurrentHP -= 8;
             Thread.Sleep(1000);
 
         }

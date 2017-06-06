@@ -35,13 +35,23 @@ public class Pause : MonoBehaviour
         else if (ispuse == false)
         {            
             timer = 1f;
-            GameObject.Find("Player").GetComponent<GameInventory>().enabled = true;
-            GameObject.Find("Player").GetComponent<Animator>().enabled = true;
+            if (GameObject.Find("Player") != null)
+            {
+                GameObject.Find("Player").GetComponent<GameInventory>().enabled = true;
+                GameObject.Find("Player").GetComponent<Animator>().enabled = true;
+            }
         }
     }
     public void NewGame()
     {
         Application.LoadLevel("House");
+        ispuse = false;
+        timer = 0;
+        MenuPanel.SetActive(false);
+    }
+    public void MainMenu()
+    {
+        Application.LoadLevel("Menu");
         ispuse = false;
         timer = 0;
         MenuPanel.SetActive(false);

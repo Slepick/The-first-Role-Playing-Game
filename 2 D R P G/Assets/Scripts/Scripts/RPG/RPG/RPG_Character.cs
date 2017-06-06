@@ -77,7 +77,7 @@ namespace RPG
             IsTalkative = true;
             IsWalkable = true;
             Hit += HitHandler;
-            Invetory = new List<Item>();
+            //Invetory = new List<Item>();
         }
         
         public int CompareTo(object obj)
